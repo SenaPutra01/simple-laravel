@@ -13,9 +13,29 @@ class MahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        Mahasiswa::create([
-            'nama' => 'Sena Putra',
-            'matakuliah' => 'Menonton Hentai'
-        ]);
+        $mahasiswa = [
+            [
+                'nama' => 'Sena Putra',
+                'matkul' => 'Pemrograman Web Lanjutan'
+            ],
+            [
+                'nama' => 'John Christoper',
+                'matkul' => 'Pemrograman Web Lanjutan'
+            ],
+            [
+                'nama' => 'Andi Sujiwo',
+                'matkul' => 'Pemrograman Web Lanjutan'
+            ],
+            [
+                'nama' => 'Salam Alaik',
+                'matkul' => 'Pemrograman Web Lanjutan'
+            ],
+            [
+                'nama' => 'Salman Alfarizi',
+                'matkul' => 'Pemrograman Web Lanjutan'
+            ]
+        ];
+
+        \DB::table('mahasiswa')->insert($mahasiswa);
     }
 }

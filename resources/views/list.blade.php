@@ -18,9 +18,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        @if(count($data) > 0)
-          @foreach ($data as $item)
+      @if(count($data) > 0)
+        @foreach ($data as $item)
+          <tr>
             <td>{{$item->nama}}</td>
             <td>{{$item->matkul}}</td>
             <td>
@@ -32,9 +32,9 @@
                 <button type="submit">Hapus Data</button>
               </form>
             </td>
-          @endforeach
-        @endif
-      </tr>
+          </tr>
+        @endforeach
+      @endif
     </tbody>  
   </table>
 </body>
