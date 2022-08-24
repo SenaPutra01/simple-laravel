@@ -68,7 +68,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Mahasiswa::find($id);
+        return view('edit')->with(compact('data'));
     }
 
     /**
@@ -80,7 +81,12 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = Mahasiswa::find($id);
+        $update->nama = $request->nama;
+        $update->matkul = $request->matkul;
+        $update->update();
+
+        return redirect()->route('mahasiswa.index');
     }
 
     /**
@@ -91,6 +97,9 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Mahasiswa::find($id);
+        $delete->delete();
+
+        return redirect()->route('mahasiswa.index');
     }
 }

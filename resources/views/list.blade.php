@@ -23,7 +23,15 @@
           @foreach ($data as $item)
             <td>{{$item->nama}}</td>
             <td>{{$item->matkul}}</td>
-            <td><a href=""></a></td>
+            <td>
+              <a href="{{route('mahasiswa.edit', $item->id)}}">Ubah Data</a>
+
+              <form action="{{route('mahasiswa.destroy', $item->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Hapus Data</button>
+              </form>
+            </td>
           @endforeach
         @endif
       </tr>
